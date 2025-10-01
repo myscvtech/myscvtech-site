@@ -1,1 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SCV Tech | Home Theater, Security Cameras, Wi-Fi & Smart Tech Installs</title>
+  <meta name="description" content="SCV Tech designs and installs home theaters, TV mounts, security cameras, Wi-Fi networks, access control, and control systems for homes and businesses in Santa Clarita & Greater LA. Free quotes, clean installs, and reliable support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#182c64;
+      --ink:#0b0e12;
+      --bg:#ffffff;
+      --bg-alt:#f6f8fb;
+      --line:#e7ecf3;
+      --muted:#6b7280;
+      --radius:16px;
+      --shadow:0 8px 30px rgba(0,0,0,.08);
+      --shadow-sm:0 4px 14px rgba(0,0,0,.07);
+      --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    h1,h2,h3{font-family:Poppins,Inter,system-ui,sans-serif;margin:0 0 .5rem}
+    h1{font-size:clamp(2rem,2.5vw+1.5rem,3.2rem);line-height:1.1}
+    h2{font-size:clamp(1.6rem,1.2vw+1.2rem,2.2rem)}
+    h3{font-size:1.15rem}
+    a{color:var(--navy);text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--max);margin-inline:auto;padding:0 20px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+      padding:.9rem 1.2rem;border-radius:999px;background:var(--navy);color:#fff;
+      font-weight:600;border:2px solid transparent;box-shadow:var(--shadow-sm);cursor:pointer
+    }
+    .btn:hover{filter:brightness(1.05)}
+    .btn:focus-visible{outline:3px solid #fff;box-shadow:0 0 0 4px #a7b7ff}
+    .btn-link{background:transparent;border:none;color:var(--navy);font-weight:600}
+    /* Header */
+    .skip-link{position:absolute;left:-9999px;top:auto}
+    .skip-link:focus{left:1rem;top:1rem;background:#fff;padding:.5rem .75rem;border:2px solid var(--navy);border-radius:8px;z-index:9999}
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .brand img{height:40px;width:auto}
+    .brand-name{font-family:Poppins,sans-serif;font-weight:700;color:var(--navy);letter-spacing:.5px}
+    .nav-links{display:flex;align-items:center;gap:1.2rem}
+    .nav-links a{color:#111827;font-weight:500}
+    .nav-cta{display:flex;align-items:center;gap:.8rem}
+    .hamburger{display:none;background:none;border:0;padding:.4rem;border-radius:10px}
+    .hamburger:focus-visible{outline:3px solid #a7b7ff}
+    @media (max-width:900px){
+      .hamburger{display:inline-flex}
+      .nav-links{position:fixed;inset:60px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);padding:1rem 1.25rem;display:none;flex-direction:column;align-items:flex-start;gap:1rem}
+      .nav-links.open{display:flex}
+      .nav-cta{display:none}
+    }
+    /* Hero */
+    .hero{background:
+      radial-gradient(1200px 500px at 80% -20%, rgba(24,44,100,.08), transparent 60%),
+      linear-gradient(180deg,#fff, #f9fbff 60%, #fff);
+      padding: clamp(3rem,6vw,6rem) 0;
+      border-bottom:1px solid var(--line)
+    }
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    .hero p{font-size:1.1rem;color:#334155;max-width:60ch}
+    .hero .cta-hint{font-size:.9rem;color:#6b7280;margin-top:.5rem}
+    .hero-card{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem
+    }
+    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    /* Services */
+    .section{padding:clamp(2.5rem,6vw,5rem) 0}
+    .section.alt{background:var(--bg-alt)}
+    .section .intro{color:#475569;max-width:70ch}
+    .services-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem
+    }
+    @media (max-width:1000px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.services-grid{grid-template-columns:1fr}}
+    .service-card{
+      position:relative;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:#fff;min-height:140px;
+      padding:1rem;display:flex;align-items:center;gap:1rem;box-shadow:var(--shadow-sm)
+    }
+    .service-icon{
+      flex:0 0 44px;height:44px;width:44px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--navy);font-weight:700
+    }
+    .service-title{font-weight:700}
+    .service-hover{
+      position:absolute;inset:0;background:rgba(24,44,100,.95);color:#fff;padding:1rem;border-radius:16px;
+      display:grid;place-items:center;text-align:center;opacity:0;transition:opacity .25s ease
+    }
+    .service-card:hover .service-hover,.service-card:focus-within .service-hover{opacity:1}
+    /* Why */
+    .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.25rem}
+    .pillar{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1rem;box-shadow:var(--shadow-sm)}
+    .pillar p{color:#475569;margin:.25rem 0 0}
+    @media (max-width:900px){.pillars{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.pillars{grid-template-columns:1fr}}
+    /* Gallery */
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:1rem}
+    @media (max-width:1050px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:720px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+    .thumb{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff}
+    .thumb img{aspect-ratio:4/3;object-fit:cover;width:100%;height:auto;transition:transform .25s ease}
+    .thumb:hover img{transform:scale(1.03)}
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:2rem;z-index:100}
+    .lightbox.open{display:flex}
+    .lightbox img{max-height:90vh;max-width:92vw;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+    .lightbox button{position:absolute;top:1rem;color:#fff;background:transparent;border:none;font-size:1.8rem;cursor:pointer}
+    .lightbox .close{right:1rem}
+    .lightbox .prev{left:1rem}
+    .lightbox .next{right:3.2rem}
+    /* FAQ */
+    .accordion{margin-top:1rem;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+    .acc-item + .acc-item{border-top:1px solid var(--line)}
+    .acc-btn{
+      width:100%;text-align:left;padding:1rem 1rem;border:0;background:#fff;font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer
+    }
+    .acc-panel{display:none;padding:0 1rem 1rem;color:#334155}
+    .acc-item.open .acc-panel{display:block}
+    .acc-item.open .chev{transform:rotate(180deg)}
+    .chev{transition:transform .2s ease}
+    /* CTA band */
+    .cta-band{
+      background:linear-gradient(180deg,#f8faff,#eef2ff);border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+    }
+    .cta-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:1.5rem;align-items:center}
+    .form-card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:1rem}
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    @media (max-width:900px){.cta-wrap{grid-template-columns:1fr} form .row{grid-template-columns:1fr}}
+    label{display:block;font-size:.9rem;color:#475569;margin:.4rem 0 .25rem}
+    input,select,textarea{
+      width:100%;padding:.75rem;border-radius:12px;border:1px solid #dce3ee;background:#fff
+    }
+    textarea{min-height:110px;resize:vertical}
+    /* Footer */
+    footer{padding:2rem 0;background:#0d1630;color:#d7def3}
+    footer a{color:#d7def3}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    .subtle{color:#9aa6c7;font-size:.92rem}
+    /* Utilities */
+    .band{padding:1rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;color:#334155;background:#fff}
+    .muted{color:var(--muted)}
+    .spacer{height:.5rem}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Header -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a class="brand" href="#top">
+        <img src="assets/img/logo/SCV_Tech_Navy_Full_Logo_No_Background_.png" alt="SCV Tech logo">
+        <span class="brand-name">SCV TECH</span>
+      </a>
+
+      <button class="hamburger" aria-expanded="false" aria-controls="menu" aria-label="Toggle Menu">
+        <!-- simple menu icon -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#182c64" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+
+      <nav id="menu" class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#why">Why SCV Tech</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn" href="#contact">Request a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Welcome to SCV Tech: Your one-stop solution for audio, video, and smart tech installs</h1>
+        <p>Reliable installs and support for home and business A/V, Wi-Fi, security, and control systems—done neatly and built to last.</p>
+        <div style="margin-top:1.25rem">
+          <a class="btn" href="#contact" aria-label="Request a quote">Request a Quote</a>
+          <div class="cta-hint">Same-day responses. No pushy sales.</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <strong style="display:block;margin-bottom:.35rem;color:#1f2937">What we do</strong>
+        <div class="muted">Home theaters, TV mounts, outdoor A/V • Security cameras & access control • Networks & whole-home Wi-Fi • Control systems • Small-business A/V • Troubleshooting</div>
+        <div class="spacer"></div>
+        <strong style="display:block;margin-bottom:.35rem;color:#1f2937">Follow & contact</strong>
+        <div class="muted">IG: <a href="https://www.instagram.com/scv.tech" target="_blank" rel="noopener">@scv.tech</a> • Nextdoor: <a href="https://nextdoor.com/pages/scv-tech-castaic-ca/" target="_blank" rel="noopener">SCV Tech</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <main id="main">
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Services</h2>
+        <p class="intro">Tap a service to learn more. We keep things simple—no separate service pages—just clean installs and clear options.</p>
+
+        <div class="services-grid" role="list">
+          <!-- Service Card Template: use letter icon placeholders -->
+          <article class="service-card" role="listitem" tabindex="0">
+            <div class="service-icon" aria-hidden="true">HT</div>
+            <div>
+              <div class="service-title">Home Theater</div>
+              <div class="muted">Projection • OLED • Atmos</div>
+            </div>
+            <div class="service-hover" aria-hidden="true">
+              Big-screen projection or OLED, Dolby Atmos layouts, tidy racks, and easy one-remote control.
+            </div>
+          </article>
+
+          <article class="service-card" role="listitem" tabindex="0">
+            <div class="service-icon">SC</div>
+            <div>
+              <div class="service-title">Security Cameras</div>
+              <div class="muted">HD/IP • Smart alerts</div>
+            </div>
+            <div class="service-hover">HD/IP cameras with smart alerts, remote viewing, and NVR setups tailored to your property.</div>
+          </article>
+
+          <article class="service-card" role="listitem" tabindex="0">
+            <div class="service-icon">TV</div>
+            <div>
+              <div class="service-title">Custom TV Mounts</div>
+              <div class="muted">Tilt • Full-motion</div>
+            </div>
+            <div class="service-hover">Low-profile, tilt, or full-motion mounts with in-wall cable concealment and power relocation.</div>
+          </article>
+
+          <article class="service-card" role="listitem" tabindex="0">
+            <div class="service-icon">AU</div>
+            <div>
+              <div class="service-title">Home Audio</div>
+              <div class="muted">In-ceiling • In-wall</div>
+            </div>
+            <div class="service-hover">In-ceiling/in-wall speakers, amps, and multi-room audio you can control from phone or voice.</div>
+          </article>
+
+          <article class="service-card" role="listitem" tabindex="0">
+            <div class="service-icon">RN</div>
+            <div>
+              <div class="service-title">Ring, Nest & Wyze</div>
+              <div class="muted">Doorbells • Cams</div>
+            </div>
+            <div class="service-hover">Video doorbells, chimes, and cameras integrated properly with your network and app.</div>
+          </article>
+
+          <article class="service-card" role="listitem" tabindex="0">
+            <div class="service-icon">NW</div>
+            <div>
+              <div class="service-title">Networks & Wi-Fi</div>
+              <div class="muted">Mesh • Hard-wired</div>
+            </div>
+            <div class="service-hover">Whole-home/business mesh Wi-Fi, hard-wired drops, rack cleanup, and secure remote access.</div>
+          </article>
+
+          <article class="service-card" role="listitem" tabindex="0">
+            <div class="service-icon">OD</div>
+            <div>
+              <div class="service-title">Outdoor TVs & Speakers</div>
+              <div class="muted">Weather-rated</div>
+            </div>
+            <div class="service-hover">Weather-rated displays and landscape audio for patios, pools, and backyards.</div>
+          </article>
+
+          <article class="service-card" role="listitem" tabindex="0">
+            <div class="service-icon">PW</div>
+            <div>
+              <div class="service-title">Prewire and Retrofit</div>
+              <div class="muted">New builds • Remodels</div>
+            </div>
+            <div class="service-hover">Structured cabling, speaker runs, conduit, and labeling that future-proofs your space.</div>
+          </article>
+
+          <article class="service-card" role="listitem" tabindex="0">
+            <div class="service-icon">AC</div>
+            <div>
+              <div class="service-title">Access Control</div>
+              <div class="muted">Locks • Gates • Badges</div>
+            </div>
+            <div class="service-hover">Smart locks, keypads, badge readers, and gate controls with audit trails and user management.</div>
+          </article>
+
+          <article class="service-card" role="listitem" tabindex="0">
+            <div class="service-icon">CS</div>
+            <div>
+              <div class="service-title">Control Systems</div>
+              <div class="muted">Unified control</div>
+            </div>
+            <div class="service-hover">Control4/URC/RTI: scenes, schedules, and simple interfaces for families and teams.</div>
+          </article>
+
+          <article class="service-card" role="listitem" tabindex="0">
+            <div class="service-icon">SB</div>
+            <div>
+              <div class="service-title">Small Business Services</div>
+              <div class="muted">Conference A/V • POS</div>
+            </div>
+            <div class="service-hover">Conferencing, digital signage, paging, POS cabling, secure guest Wi-Fi, and camera coverage.</div>
+          </article>
+
+          <article class="service-card" role="listitem" tabindex="0">
+            <div class="service-icon">FX</div>
+            <div>
+              <div class="service-title">Troubleshooting</div>
+              <div class="muted">Fix & optimize</div>
+            </div>
+            <div class="service-hover">Solve “it used to work” issues: no signal, buffering, dropouts, HDMI/CEC quirks, messy racks.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section id="why" class="section alt">
+      <div class="container">
+        <h2>Why SCV Tech</h2>
+        <p class="intro">At SCV Tech, we’re passionate about providing dependable and cutting-edge technology solutions for homes and businesses throughout the Santa Clarita Valley and beyond. With over 33 years of combined experience, our team brings professionalism, creativity, and attention to detail to every project. From home theaters and networks to advanced security and smart automation, we treat your space as if it were our own.</p>
+
+        <div class="pillars">
+          <div class="pillar">
+            <h3>Experience You Can Trust</h3>
+            <p>33+ years combined—from simple TV mounts to full commercial A/V.</p>
+          </div>
+          <div class="pillar">
+            <h3>Clean, Careful Work</h3>
+            <p>We hide wires, label everything, and leave your place spotless.</p>
+          </div>
+          <div class="pillar">
+            <h3>Custom Solutions</h3>
+            <p>Designed around your room, budget, and future upgrades.</p>
+          </div>
+          <div class="pillar">
+            <h3>Transparent Support</h3>
+            <p>Clear quotes, honest options, and help when you need it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2>Recent Work</h2>
+        <p class="intro">A few snapshots from homes and small businesses we’ve helped. Tap to enlarge.</p>
+
+        <div class="gallery-grid" role="list">
+          <!-- 16 thumbs -->
+          <!-- You can generate/duplicate these quickly by editing the index numbers -->
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential1_thumb.jpg" data-index="0">
+            <img src="assets/img/gallery/residential1_thumb.jpg" alt="Installation photo 1">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential2_thumb.jpg" data-index="1">
+            <img src="assets/img/gallery/residential2_thumb.jpg" alt="Installation photo 2">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential3_thumb.jpg" data-index="2">
+            <img src="assets/img/gallery/residential3_thumb.jpg" alt="Installation photo 3">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential4_thumb.jpg" data-index="3">
+            <img src="assets/img/gallery/residential4_thumb.jpg" alt="Installation photo 4">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential5_thumb.jpg" data-index="4">
+            <img src="assets/img/gallery/residential5_thumb.jpg" alt="Installation photo 5">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential6_thumb.jpg" data-index="5">
+            <img src="assets/img/gallery/residential6_thumb.jpg" alt="Installation photo 6">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential7_thumb.jpg" data-index="6">
+            <img src="assets/img/gallery/residential7_thumb.jpg" alt="Installation photo 7">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential8_thumb.jpg" data-index="7">
+            <img src="assets/img/gallery/residential8_thumb.jpg" alt="Installation photo 8">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential9_thumb.jpg" data-index="8">
+            <img src="assets/img/gallery/residential9_thumb.jpg" alt="Installation photo 9">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential10_thumb.jpg" data-index="9">
+            <img src="assets/img/gallery/residential10_thumb.jpg" alt="Installation photo 10">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential11_thumb.jpg" data-index="10">
+            <img src="assets/img/gallery/residential11_thumb.jpg" alt="Installation photo 11">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential12_thumb.jpg" data-index="11">
+            <img src="assets/img/gallery/residential12_thumb.jpg" alt="Installation photo 12">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential13_thumb.jpg" data-index="12">
+            <img src="assets/img/gallery/residential13_thumb.jpg" alt="Installation photo 13">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential14_thumb.jpg" data-index="13">
+            <img src="assets/img/gallery/residential14_thumb.jpg" alt="Installation photo 14">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential15_thumb.jpg" data-index="14">
+            <img src="assets/img/gallery/residential15_thumb.jpg" alt="Installation photo 15">
+          </a>
+          <a class="thumb" role="listitem" href="assets/img/gallery/residential16_thumb.jpg" data-index="15">
+            <img src="assets/img/gallery/residential16_thumb.jpg" alt="Installation photo 16">
+          </a>
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Image viewer">
+        <button class="prev" aria-label="Previous image">‹</button>
+        <img src="" alt="">
+        <button class="next" aria-label="Next image">›</button>
+        <button class="close" aria-label="Close viewer">×</button>
+      </div>
+    </section>
+
+    <!-- Service area line -->
+    <div class="band">Proudly serving Santa Clarita Valley and Greater Los Angeles.</div>
+
+    <!-- FAQs -->
+    <section id="faqs" class="section alt">
+      <div class="container">
+        <h2>FAQs</h2>
+
+        <!-- AV -->
+        <div class="accordion">
+          <div class="acc-item">
+            <button class="acc-btn" type="button"><span>🔊 Audio/Video (AV) FAQs</span><span class="chev">▾</span></button>
+            <div class="acc-panel">
+              <p><strong>Can you install ceiling or in-wall speakers?</strong><br>Yes! We install flush-mount speakers for a clean, professional look in homes and commercial spaces.</p>
+              <p><strong>Do you offer custom home theater installations?</strong><br>Absolutely. From projectors and screens to Dolby Atmos surround sound, we design immersive home theater setups.</p>
+              <p><strong>Can I control my AV system from my phone or tablet?</strong><br>Yes. We integrate AV systems with smartphone apps, smart remotes, and voice assistants like Alexa or Google Home.</p>
+              <p><strong>Do you work with Sonos systems?</strong><br>Yes. We install, configure, and integrate Sonos systems into your space, including Arc, Beam, and outdoor speakers.</p>
+              <p><strong>Can you install AV systems in conference rooms or offices?</strong><br>Yes. We provide displays, microphones, speakers, video conferencing tools, and Zoom-ready setups for businesses.</p>
+              <p><strong>Can you hide all my AV equipment and wires?</strong><br>Definitely. We offer in-wall cable routing and media closets so your setup stays clean and modern.</p>
+            </div>
+          </div>
+          <!-- Security -->
+          <div class="acc-item">
+            <button class="acc-btn" type="button"><span>🛡 Security System FAQs</span><span class="chev">▾</span></button>
+            <div class="acc-panel">
+              <p><strong>What’s the difference between NVR and DVR systems?</strong><br>DVRs are used with analog cameras; NVRs are for IP cameras and offer better quality and smarter features.</p>
+              <p><strong>Can I access my security footage from my smartphone?</strong><br>Yes. Our systems include apps that allow you to view live or recorded footage from anywhere.</p>
+              <p><strong>Do you provide video doorbells?</strong><br>Yes. We install Ring, Nest, Wyze, and other video doorbells with mobile access and two-way audio.</p>
+              <p><strong>Are your systems good for Airbnb or rental properties?</strong><br>Yes. We install remote-access cameras and smart locks perfect for property management.</p>
+              <p><strong>Do you provide monitoring services?</strong><br>We offer self-monitoring and can integrate with third-party professional monitoring from the provider of your choice.</p>
+            </div>
+          </div>
+          <!-- Lighting -->
+          <div class="acc-item">
+            <button class="acc-btn" type="button"><span>💡 Low Voltage Lighting FAQs</span><span class="chev">▾</span></button>
+            <div class="acc-panel">
+              <p><strong>What is low voltage lighting?</strong><br>It’s lighting that uses 12V or 24V systems, often used outdoors or for accent lighting. It’s safe, energy-efficient, and ideal for residential or commercial properties.</p>
+              <p><strong>Can I control low voltage lighting with my phone?</strong><br>Yes. We offer smart controllers that connect to your smartphone, Google Home, or Alexa.</p>
+              <p><strong>Can you install pathway or landscape lights?</strong><br>Yes. We install weatherproof LED systems perfect for walkways, backyards, and entry points.</p>
+              <p><strong>Is low voltage lighting a good choice for my storefront or office?</strong><br>Absolutely. It enhances curb appeal, improves safety, and saves on long-term energy costs.</p>
+            </div>
+          </div>
+          <!-- Pricing -->
+          <div class="acc-item">
+            <button class="acc-btn" type="button"><span>💵 Pricing & Cost Questions</span><span class="chev">▾</span></button>
+            <div class="acc-panel">
+              <p><strong>How much does a basic security camera system cost?</strong><br>A 4-camera HD system with installation typically starts around $1,200–$1,800, depending on features and location. Prices vary by job.</p>
+              <p><strong>What’s the cost to mount a TV and hide cables?</strong><br>Standard TV mounting with concealed wiring usually starts at $250–$450, depending on wall type and cable routing. Prices vary by job.</p>
+              <p><strong>Do you charge hourly or by project?</strong><br>Most jobs are quoted per project. Troubleshooting or small add-ons may be billed hourly.</p>
+              <p><strong>Do you offer free quotes?</strong><br>Yes. We provide free consultations and quotes for all installation services.</p>
+              <p><strong>Do you offer bundle pricing?</strong><br>Yes. We provide bundle discounts for combined services like AV, lighting, and security system installs.</p>
+            </div>
+          </div>
+          <!-- Planning -->
+          <div class="acc-item">
+            <button class="acc-btn" type="button"><span>📋 Suggestions & Planning FAQs</span><span class="chev">▾</span></button>
+            <div class="acc-panel">
+              <p><strong>Should I pre-wire during construction?</strong><br>Yes—pre-wiring during new construction or remodeling is more cost-effective and future-proofs your space.</p>
+              <p><strong>How many cameras do I need for full coverage?</strong><br>Most homes need 4–6 cameras. Businesses may require 8–16+, depending on layout and entrances.</p>
+              <p><strong>What’s the best AV system for a backyard?</strong><br>We recommend weather-rated outdoor TVs and speakers, paired with surge protection and wireless app control.</p>
+              <p><strong>Do you offer after-hours installation?</strong><br>Yes. We can schedule installs during evenings or weekends to accommodate your schedule.</p>
+            </div>
+          </div>
+          <!-- Contact -->
+          <div class="acc-item">
+            <button class="acc-btn" type="button"><span>📞 Still Have Questions?</span><span class="chev">▾</span></button>
+            <div class="acc-panel">
+              <p><strong>Call or text:</strong> <a href="tel:+16612149212">661-214-9212</a><br>
+              <strong>Instagram:</strong> <a href="https://www.instagram.com/scv.tech" target="_blank" rel="noopener">@scv.tech</a><br>
+              <strong>Nextdoor:</strong> <a href="https://nextdoor.com/pages/scv-tech-castaic-ca/" target="_blank" rel="noopener">SCV Tech</a><br>
+              <strong>Email:</strong> <a href="mailto:info@myscvtech.com">info@myscvtech.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="section cta-band">
+      <div class="container cta-wrap">
+        <div>
+          <h2>Ready for clean, reliable tech?</h2>
+          <p class="intro">Tell us a bit about your project and we’ll get back to you fast with options that fit your space and budget.</p>
+          <ul class="muted" style="margin:0;padding-left:1rem">
+            <li>Free quotes</li>
+            <li>Transparent pricing</li>
+            <li>Respect for your space</li>
+          </ul>
+        </div>
+        <div class="form-card">
+          <form id="quote-form" onsubmit="event.preventDefault(); alert('Thanks! We\\'ll follow up shortly. (Submission endpoint pending)');">
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Full name" required>
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" placeholder="you@example.com" required>
+              </div>
+            </div>
+            <div class="row" style="margin-top:.5rem">
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" placeholder="(###) ###-####">
+              </div>
+              <div>
+                <label for="type">Project Type</label>
+                <select id="type" name="type">
+                  <option>Home Theater</option>
+                  <option>Security Cameras</option>
+                  <option>Custom TV Mounts</option>
+                  <option>Home Audio</option>
+                  <option>Ring/Nest/Wyze</option>
+                  <option>Networks & Wi-Fi</option>
+                  <option>Outdoor TVs & Speakers</option>
+                  <option>Prewire/Retrofit</option>
+                  <option>Access Control</option>
+                  <option>Control Systems</option>
+                  <option>Small Business Services</option>
+                  <option>Troubleshooting</option>
+                </select>
+              </div>
+            </div>
+            <div style="margin-top:.5rem">
+              <label for="message">How can we help?</label>
+              <textarea id="message" name="message" placeholder="Tell us about your space, timeline, and goals"></textarea>
+            </div>
+            <div style="margin-top:.9rem;display:flex;align-items:center;gap:.6rem">
+              <button class="btn" type="submit">Request a Quote</button>
+              <button class="btn-link" type="reset">Clear</button>
+            </div>
+            <div class="muted" style="margin-top:.5rem;font-size:.9rem">No spam. Real people. Same-day response.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.5rem">
+          <img src="assets/img/logo/SCV_Tech_Navy_Full_Logo_No_Background_.png" alt="" aria-hidden="true" />
+          <span class="brand-name" style="color:#d7def3">SCV TECH</span>
+        </div>
+        <div class="subtle">Clean A/V, networking, security, and smart control—done right.</div>
+        <div class="subtle" style="margin-top:.5rem">Proudly serving Santa Clarita Valley and Greater Los Angeles.</div>
+      </div>
+      <div>
+        <h3 style="color:#e7ecff">Contact</h3>
+        <div class="subtle"><a href="tel:+16612149212">661-214-9212</a></div>
+        <div class="subtle"><a href="mailto:info@myscvtech.com">info@myscvtech.com</a></div>
+        <div class="subtle"><a href="https://www.instagram.com/scv.tech" target="_blank" rel="noopener">Instagram @scv.tech</a></div>
+        <div class="subtle"><a href="https://nextdoor.com/pages/scv-tech-castaic-ca/" target="_blank" rel="noopener">Nextdoor</a></div>
+      </div>
+      <div>
+        <h3 style="color:#e7ecff">Quick Links</h3>
+        <div class="subtle"><a href="#services">Services</a></div>
+        <div class="subtle"><a href="#gallery">Gallery</a></div>
+        <div class="subtle"><a href="#faqs">FAQs</a></div>
+        <div class="subtle"><a href="#contact">Request a Quote</a></div>
+      </div>
+    </div>
+    <div class="container" style="margin-top:1rem;border-top:1px solid rgba(255,255,255,.12);padding-top:1rem">
+      <div class="subtle">© <span id="year"></span> SCV Tech. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const hamb = document.querySelector('.hamburger');
+    const menu = document.getElementById('menu');
+    hamb?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Accordion
+    document.querySelectorAll('.acc-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item = btn.closest('.acc-item');
+        // close others
+        document.querySelectorAll('.acc-item').forEach(i=>{ if(i!==item) i.classList.remove('open'); });
+        item.classList.toggle('open');
+      });
+    });
+
+    // Gallery Lightbox
+    const thumbs = Array.from(document.querySelectorAll('.gallery-grid .thumb'));
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = lightbox.querySelector('img');
+    const btnPrev = lightbox.querySelector('.prev');
+    const btnNext = lightbox.querySelector('.next');
+    const btnClose = lightbox.querySelector('.close');
+    let currentIndex = 0;
+
+    function openLightbox(index){
+      currentIndex = index;
+      lbImg.src = thumbs[index].getAttribute('href');
+      lbImg.alt = thumbs[index].querySelector('img').alt || 'Gallery image';
+      lightbox.classList.add('open');
+      document.body.style.overflow='hidden';
+    }
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      document.body.style.overflow='';
+    }
+    function step(dir){
+      currentIndex = (currentIndex + dir + thumbs.length) % thumbs.length;
+      lbImg.src = thumbs[currentIndex].getAttribute('href');
+      lbImg.alt = thumbs[currentIndex].querySelector('img').alt || 'Gallery image';
+    }
+    thumbs.forEach((a, i)=>{
+      a.addEventListener('click', (e)=>{ e.preventDefault(); openLightbox(i); });
+      a.addEventListener('keydown',(e)=>{ if(e.key==='Enter') { e.preventDefault(); openLightbox(i);} });
+    });
+    btnPrev.addEventListener('click',()=>step(-1));
+    btnNext.addEventListener('click',()=>step(1));
+    btnClose.addEventListener('click',closeLightbox);
+    lightbox.addEventListener('click',(e)=>{ if(e.target===lightbox) closeLightbox(); });
+    document.addEventListener('keydown',(e)=>{
+      if(!lightbox.classList.contains('open')) return;
+      if(e.key==='Escape') closeLightbox();
+      if(e.key==='ArrowLeft') step(-1);
+      if(e.key==='ArrowRight') step(1);
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
