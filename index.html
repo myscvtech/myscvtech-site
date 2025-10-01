@@ -64,24 +64,26 @@
       .nav-links.open{display:flex}
       .nav-cta{display:none}
     }
-    /* Hero */
-    .hero{background:
-      radial-gradient(1200px 500px at 80% -20%, rgba(24,44,100,.08), transparent 60%),
-      linear-gradient(180deg,#fff, #f9fbff 60%, #fff);
-      padding: clamp(3rem,6vw,6rem) 0;
-      border-bottom:1px solid var(--line)
-    }
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
-    .hero p{font-size:1.1rem;color:#334155;max-width:60ch}
-    .hero .cta-hint{font-size:.9rem;color:#6b7280;margin-top:.5rem}
-    .hero-card{
-      background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem
-    }
-    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
-    /* Services */
+    /* Section wrapper */
     .section{padding:clamp(2.5rem,6vw,5rem) 0}
     .section.alt{background:var(--bg-alt)}
     .section .intro{color:#475569;max-width:70ch}
+    /* HERO (centered & larger) */
+    .hero{
+      background:
+        radial-gradient(1200px 500px at 80% -20%, rgba(24,44,100,.08), transparent 60%),
+        linear-gradient(180deg,#fff, #f9fbff 60%, #fff);
+      padding: clamp(3rem,6vw,6rem) 0;
+      border-bottom:1px solid var(--line);
+      text-align:center;
+    }
+    .hero-grid{display:grid;grid-template-columns:1fr;justify-items:center}
+    .hero h1{font-size:clamp(2.6rem,3.6vw + 1.4rem,4rem);line-height:1.08}
+    .hero p{font-size:1.25rem;color:#334155;max-width:70ch;margin:.6rem auto 0}
+    .hero-ctas{margin-top:1.25rem}
+    .hero .btn{padding:1rem 1.5rem;font-size:1.05rem}
+    .hero .cta-hint{font-size:.95rem;color:#6b7280;margin-top:.5rem}
+    /* Services */
     .services-grid{
       display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem
     }
@@ -121,13 +123,14 @@
     .lightbox .close{right:1rem}
     .lightbox .prev{left:1rem}
     .lightbox .next{right:3.2rem}
-    /* FAQ */
+    /* FAQ (bigger fonts, no emojis) */
     .accordion{margin-top:1rem;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
     .acc-item + .acc-item{border-top:1px solid var(--line)}
     .acc-btn{
-      width:100%;text-align:left;padding:1rem 1rem;border:0;background:#fff;font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer
+      width:100%;text-align:left;padding:1.1rem 1rem;border:0;background:#fff;font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer;
+      font-size:1.15rem;
     }
-    .acc-panel{display:none;padding:0 1rem 1rem;color:#334155}
+    .acc-panel{display:none;padding:0 1rem 1rem;color:#334155;font-size:1.05rem}
     .acc-item.open .acc-panel{display:block}
     .acc-item.open .chev{transform:rotate(180deg)}
     .chev{transition:transform .2s ease}
@@ -168,7 +171,6 @@
       </a>
 
       <button class="hamburger" aria-expanded="false" aria-controls="menu" aria-label="Toggle Menu">
-        <!-- simple menu icon -->
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#182c64" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
 
@@ -186,32 +188,28 @@
     </div>
   </header>
 
-  <!-- Hero -->
-<!-- Hero -->
-<section id="top" class="hero">
-  <div class="container hero-grid">
-    <div class="hero-main">
-      <h1>Welcome to SCV Tech: Your one-stop solution for audio, video, and smart tech installs</h1>
-      <p>Reliable installs and support for home and business A/V, Wi-Fi, security, and control systems—done neatly and built to last.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#contact" aria-label="Request a quote">Request a Quote</a>
-        <div class="cta-hint">Same-day responses.</div>
+  <!-- Hero (centered, larger, simplified) -->
+  <section id="top" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-main">
+        <h1>Welcome to SCV Tech: Your one-stop solution for audio, video, and smart tech installs</h1>
+        <p>Reliable installs and support for home and business A/V, Wi-Fi, security, and control systems—done neatly and built to last.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#contact" aria-label="Request a quote">Request a Quote</a>
+          <div class="cta-hint">Same-day responses.</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  
-
-  <!-- Services -->
   <main id="main">
+    <!-- Services -->
     <section id="services" class="section">
       <div class="container">
         <h2>Services</h2>
         <p class="intro">Tap a service to learn more. We keep things simple—no separate service pages—just clean installs and clear options.</p>
 
         <div class="services-grid" role="list">
-          <!-- Service Card Template: use letter icon placeholders -->
           <article class="service-card" role="listitem" tabindex="0">
             <div class="service-icon" aria-hidden="true">HT</div>
             <div>
@@ -359,8 +357,6 @@
         <p class="intro">A few snapshots from homes and small businesses we’ve helped. Tap to enlarge.</p>
 
         <div class="gallery-grid" role="list">
-          <!-- 16 thumbs -->
-          <!-- You can generate/duplicate these quickly by editing the index numbers -->
           <a class="thumb" role="listitem" href="assets/img/gallery/residential1_thumb.jpg" data-index="0">
             <img src="assets/img/gallery/residential1_thumb.jpg" alt="Installation photo 1">
           </a>
@@ -432,7 +428,7 @@
         <!-- AV -->
         <div class="accordion">
           <div class="acc-item">
-            <button class="acc-btn" type="button"><span>🔊 Audio/Video (AV) FAQs</span><span class="chev">▾</span></button>
+            <button class="acc-btn" type="button"><span>Audio/Video (AV) FAQs</span><span class="chev">▾</span></button>
             <div class="acc-panel">
               <p><strong>Can you install ceiling or in-wall speakers?</strong><br>Yes! We install flush-mount speakers for a clean, professional look in homes and commercial spaces.</p>
               <p><strong>Do you offer custom home theater installations?</strong><br>Absolutely. From projectors and screens to Dolby Atmos surround sound, we design immersive home theater setups.</p>
@@ -444,7 +440,7 @@
           </div>
           <!-- Security -->
           <div class="acc-item">
-            <button class="acc-btn" type="button"><span>🛡 Security System FAQs</span><span class="chev">▾</span></button>
+            <button class="acc-btn" type="button"><span>Security System FAQs</span><span class="chev">▾</span></button>
             <div class="acc-panel">
               <p><strong>What’s the difference between NVR and DVR systems?</strong><br>DVRs are used with analog cameras; NVRs are for IP cameras and offer better quality and smarter features.</p>
               <p><strong>Can I access my security footage from my smartphone?</strong><br>Yes. Our systems include apps that allow you to view live or recorded footage from anywhere.</p>
@@ -455,7 +451,7 @@
           </div>
           <!-- Lighting -->
           <div class="acc-item">
-            <button class="acc-btn" type="button"><span>💡 Low Voltage Lighting FAQs</span><span class="chev">▾</span></button>
+            <button class="acc-btn" type="button"><span>Low Voltage Lighting FAQs</span><span class="chev">▾</span></button>
             <div class="acc-panel">
               <p><strong>What is low voltage lighting?</strong><br>It’s lighting that uses 12V or 24V systems, often used outdoors or for accent lighting. It’s safe, energy-efficient, and ideal for residential or commercial properties.</p>
               <p><strong>Can I control low voltage lighting with my phone?</strong><br>Yes. We offer smart controllers that connect to your smartphone, Google Home, or Alexa.</p>
@@ -465,7 +461,7 @@
           </div>
           <!-- Pricing -->
           <div class="acc-item">
-            <button class="acc-btn" type="button"><span>💵 Pricing & Cost Questions</span><span class="chev">▾</span></button>
+            <button class="acc-btn" type="button"><span>Pricing & Cost Questions</span><span class="chev">▾</span></button>
             <div class="acc-panel">
               <p><strong>How much does a basic security camera system cost?</strong><br>A 4-camera HD system with installation typically starts around $1,200–$1,800, depending on features and location. Prices vary by job.</p>
               <p><strong>What’s the cost to mount a TV and hide cables?</strong><br>Standard TV mounting with concealed wiring usually starts at $250–$450, depending on wall type and cable routing. Prices vary by job.</p>
@@ -476,7 +472,7 @@
           </div>
           <!-- Planning -->
           <div class="acc-item">
-            <button class="acc-btn" type="button"><span>📋 Suggestions & Planning FAQs</span><span class="chev">▾</span></button>
+            <button class="acc-btn" type="button"><span>Suggestions & Planning FAQs</span><span class="chev">▾</span></button>
             <div class="acc-panel">
               <p><strong>Should I pre-wire during construction?</strong><br>Yes—pre-wiring during new construction or remodeling is more cost-effective and future-proofs your space.</p>
               <p><strong>How many cameras do I need for full coverage?</strong><br>Most homes need 4–6 cameras. Businesses may require 8–16+, depending on layout and entrances.</p>
@@ -486,7 +482,7 @@
           </div>
           <!-- Contact -->
           <div class="acc-item">
-            <button class="acc-btn" type="button"><span>📞 Still Have Questions?</span><span class="chev">▾</span></button>
+            <button class="acc-btn" type="button"><span>Still Have Questions?</span><span class="chev">▾</span></button>
             <div class="acc-panel">
               <p><strong>Call or text:</strong> <a href="tel:+16612149212">661-214-9212</a><br>
               <strong>Instagram:</strong> <a href="https://www.instagram.com/scv.tech" target="_blank" rel="noopener">@scv.tech</a><br>
