@@ -201,6 +201,18 @@
   </div>
 </section>
 
+/* HERO: centered & larger */
+.hero { text-align: center; }
+.hero-grid { display: grid; grid-template-columns: 1fr; justify-items: center; }
+.hero h1 { font-size: clamp(2.6rem, 3.6vw + 1.4rem, 4rem); line-height: 1.08; }
+.hero p { font-size: 1.25rem; max-width: 70ch; margin: .6rem auto 0; }
+.hero-ctas { margin-top: 1.25rem; }
+.hero .btn { padding: 1rem 1.5rem; font-size: 1.05rem; }
+
+/* Remove the old right-side card if you still have it in the file */
+.hero-card { display: none !important; }
+
+  
 
   <!-- Services -->
   <main id="main">
