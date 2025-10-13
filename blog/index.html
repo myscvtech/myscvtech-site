@@ -1,1 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SCV Tech Blog | Tips on Home Theater, Cameras, Wi-Fi & Smart Tech</title>
+  <meta name="description" content="SCV Tech blog: practical guides on home theater, TV mounting, security cameras, Wi-Fi networks, access control, Control4, Sonos, and smart home upgrades in Santa Clarita & Greater Los Angeles." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="SCV Tech Blog — Audio, Video, Wi-Fi & Security Tips">
+  <meta property="og:description" content="Guides and how-tos for A/V installs, cameras, Wi-Fi networks, access control, Control4, Sonos, and more.">
+  <meta property="og:image" content="assets/img/og/og-hero.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon / App icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/icons/icon-512.png">
+
+  <style>
+    :root{
+      --navy:#182c64; --ink:#0b0e12; --bg:#fff; --bg-alt:#f6f8fb; --line:#e7ecf3; --muted:#6b7280;
+      --shadow:0 8px 30px rgba(0,0,0,.08); --shadow-sm:0 4px 14px rgba(0,0,0,.07);
+      --radius:16px; --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    h1,h2,h3{font-family:Poppins,Inter,system-ui,sans-serif;margin:0 0 .5rem}
+    h1{font-size:clamp(2rem,2.5vw+1.2rem,3rem);line-height:1.1}
+    h2{font-size:clamp(1.5rem,1.1vw+1rem,2rem)}
+    h3{font-size:1.15rem}
+    a{color:var(--navy);text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--max);margin-inline:auto;padding:0 20px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.9rem 1.3rem;border-radius:999px;background:var(--navy);color:#fff;font-weight:600;border:2px solid transparent;box-shadow:var(--shadow-sm);cursor:pointer}
+    .btn:hover{filter:brightness(1.05)}
+
+    /* Header (matches site) */
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.04)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;gap:1rem}
+    .brand img{height:72px;width:auto}
+    .nav-links{display:flex;align-items:center;gap:1.2rem}
+    .nav-links a{color:#111827;font-weight:500}
+    .nav-cta{display:flex;align-items:center;gap:.8rem}
+    .hamburger{display:none;background:none;border:0;padding:.4rem;border-radius:10px}
+    @media (max-width:900px){
+      .brand img{height:56px}
+      .hamburger{display:inline-flex}
+      .nav-links{
+        position:fixed; inset:80px 0 auto 0; background:#fff; border-bottom:1px solid var(--line);
+        padding:1rem 1.25rem; display:none; flex-direction:column; align-items:flex-start; gap:1rem
+      }
+      .nav-links.open{display:flex}
+      .nav-cta{display:none} /* keep header clean on mobile */
+    }
+
+    /* Hero band */
+    .blog-hero{
+      background:linear-gradient(180deg,#f8faff,#eef2ff);
+      border-bottom:1px solid var(--line);
+      text-align:center;
+      padding:clamp(3rem,6vw,5rem) 0;
+    }
+    .blog-hero p{color:#475569;max-width:70ch;margin:.5rem auto 0}
+
+    /* Layout */
+    .section{padding:clamp(2rem,5vw,4rem) 0}
+    .posts{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    @media (max-width:1000px){.posts{grid-template-columns:1fr}}
+    .post{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+    .post figure{margin:0}
+    .post .thumb{
+  width:50%;           /* makes images narrower overall */
+  max-width:800px;     /* caps image width */
+  margin:0 auto;       /* centers it */
+  border-radius:12px;  /* optional — adds softer edges */
+  display:block;
+  object-fit:cover;
+  aspect-ratio:16/9;
+  background:#e9eef9;
+}
+
+    .post .body{padding:1rem}
+    .post .meta{font-size:.9rem;color:#6b7280;margin-bottom:.35rem}
+    .post h2{margin:0 0 .35rem}
+    .post .excerpt{color:#475569;margin:0 0 .75rem}
+    .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+    .tag{font-size:.8rem;background:#eef2ff;color:#182c64;padding:.2rem .5rem;border-radius:999px;border:1px solid #d9e1ff}
+
+    /* Single-post blocks (mini-blogs stacked) */
+    .stack{display:grid;gap:1rem}
+    .stack .post{border-radius:16px}
+
+    /* Footer (matches site) */
+    footer{padding:2rem 0;background:#0d1630;color:#d7def3}
+    footer a{color:#d7def3}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    .footer-title{font-family:Poppins,sans-serif;color:#e7ecff;font-weight:700}
+    .brand-text{font-family:Poppins,sans-serif;font-weight:700;color:#d7def3;letter-spacing:.6px}
+    .subtle{color:#9aa6c7;font-size:.92rem}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="SCV Tech home">
+        <img src="assets/img/logo/SCV_Tech_Navy_Full_Logo_No_Background_.png" alt="SCV Tech logo">
+      </a>
+      <button class="hamburger" aria-expanded="false" aria-controls="menu" aria-label="Toggle Menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#182c64" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <nav id="menu" class="nav-links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#why">Why SCV Tech</a>
+        <a href="index.html#faqs">FAQs</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn" href="index.html#contact">Request a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Blog hero -->
+  <section class="blog-hero">
+    <div class="container">
+      <h1>SCV Tech Blog</h1>
+      <p>Mini-guides on smart home upgrades, A/V, Wi-Fi networking, Control4, Sonos, and more—written by installers, not marketers.</p>
+    </div>
+  </section>
+
+  <!-- Posts -->
+  <main class="section">
+    <div class="container stack">
+
+      <!-- Top 5 Smart Home Upgrades -->
+      <article class="post" id="smart-home-upgrades-2025">
+        <figure><img class="thumb" src="assets/img/blog/smart-home.jpg" alt="Smart home devices and mobile control"></figure>
+        <div class="body">
+          <div class="meta">October 2025 · SCV Tech</div>
+          <h2>Top 5 Smart Home Upgrades to Consider in 2025</h2>
+          <p>Smart home tech is no longer a luxury — it's a standard for comfort, efficiency, and peace of mind. Here are the top 5 upgrades SCV Tech recommends:</p>
+          <h3>Smart Security Cameras</h3>
+          <p>Keep an eye on your home from anywhere with HD video, night vision, and AI motion alerts.</p>
+          <h3>Voice-Controlled Home Audio</h3>
+          <p>Stream music in every room, control volume by voice, and enjoy immersive surround sound setups.</p>
+          <h3>Smart Thermostats & Lighting</h3>
+          <p>Save energy with intelligent temperature and lighting automation that adjusts to your schedule.</p>
+          <h3>Ring, Nest & Wyze Integration</h3>
+          <p>Doorbells, locks, and sensors that sync seamlessly to your smartphone — we install and configure it all.</p>
+          <h3>Control Systems</h3>
+          <p>Unify your TVs, lights, audio, cameras, and more into one easy-to-use platform.</p>
+          <p>These upgrades add real value to your home, especially when professionally installed and tailored to your layout.</p>
+          <div class="tags">
+            <span class="tag">#smarthome</span><span class="tag">#scvtech</span><span class="tag">#smartlighting</span><span class="tag">#homeautomation</span><span class="tag">#custominstall</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Commercial Security Systems -->
+      <article class="post" id="commercial-security-systems">
+        <figure><img class="thumb" src="assets/img/blog/commercial-security.jpg" alt="Access control keypad at a business entry"></figure>
+        <div class="body">
+          <div class="meta">October 2025 · SCV Tech</div>
+          <h2>Why Every Business Needs Custom Security Solutions</h2>
+          <p>Whether you run a retail store or a corporate office, the risks of outdated security tech are real. SCV Tech helps small businesses secure what matters with:</p>
+          <h3>Access Control Systems</h3>
+          <p>Grant or restrict access to staff and visitors — no more loose keys or manual logs.</p>
+          <h3>Remote Monitoring & Mobile Alerts</h3>
+          <p>Check live footage or receive alerts the moment motion is detected after hours.</p>
+          <h3>Wi-Fi & Network Optimization</h3>
+          <p>A secure business starts with a stable, encrypted network — and we build it right the first time.</p>
+          <h3>Commercial-Grade Camera Installations</h3>
+          <p>Clean cabling, proper coverage zones, and hidden power runs — done professionally.</p>
+          <p>Tech security is no longer optional — it's a core business asset.</p>
+          <div class="tags">
+            <span class="tag">#businesssecurity</span><span class="tag">#accesscontrol</span><span class="tag">#custominstall</span><span class="tag">#commercialtech</span><span class="tag">#scvtech</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Home Theater Setup -->
+      <article class="post" id="home-theater-setup">
+        <figure><img class="thumb" src="assets/img/blog/home-theater2.jpg" alt="Home theater with projector and surround speakers"></figure>
+        <div class="body">
+          <div class="meta">October 2025 · SCV Tech</div>
+          <h2>What to Know Before Your Home Theater Installation</h2>
+          <p>Planning a home theater or media room? Here are tips from our installers:</p>
+          <h3>Prewire Your Walls</h3>
+          <p>Even if you’re not ready for speakers yet, we recommend wiring during construction or remodels.</p>
+          <h3>Choose the Right Mounting Location</h3>
+          <p>The TV isn’t always best at eye-level — it depends on seating and sunlight exposure.</p>
+          <h3>Hidden Equipment Racks</h3>
+          <p>Want a clean look? We design systems with central hubs for receivers, wires, and remotes — out of sight.</p>
+          <h3>Soundproofing and Acoustic Layouts</h3>
+          <p>Proper speaker placement and insulation make a huge difference in sound quality.</p>
+          <p>Every space is different — we design based on your actual room, not cookie-cutter kits.</p>
+          <div class="tags">
+            <span class="tag">#hometheater</span><span class="tag">#customAV</span><span class="tag">#tvinstallation</span><span class="tag">#audiovisual</span><span class="tag">#scvtech</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Wi-Fi Networking Solutions -->
+      <article class="post" id="wifi-networking">
+        <figure><img class="thumb" src="assets/img/blog/wifi-network.jpg" alt="Clean network rack and Wi-Fi access point"></figure>
+        <div class="body">
+          <div class="meta">October 2025 · SCV Tech</div>
+          <h2>Wi-Fi and Networking: How to Eliminate Dead Zones for Good</h2>
+          <p>A reliable network is the foundation of your smart home or business — but most people settle for weak coverage, buffering, or dropouts. At SCV Tech, we install custom Wi-Fi and networking systems designed to keep your entire space connected.</p>
+          <h3>Why DIY Systems Fall Short</h3>
+          <p>Most store-bought routers can’t handle modern usage:</p>
+          <ul>
+            <li>Too many devices slow things down</li>
+            <li>Concrete walls or large layouts block signals</li>
+            <li>Placement often leads to dead zones in key areas</li>
+          </ul>
+          <p>That’s where we come in.</p>
+          <h3>SCV Tech Wi-Fi Solutions</h3>
+          <ul>
+            <li><strong>Mesh Wi-Fi Networks</strong> — Eliminate dead zones with multiple access points placed throughout your property</li>
+            <li><strong>Hardwired Ethernet Lines</strong> — Perfect for gaming, streaming, or remote work with zero lag</li>
+            <li><strong>Outdoor Wi-Fi</strong> — Coverage for patios, pools, and exterior cameras</li>
+            <li><strong>Business-Class Security</strong> — Encrypted networks with guest logins and monitoring</li>
+          </ul>
+          <h3>Typical Signs You Need an Upgrade</h3>
+          <ul>
+            <li>Zoom calls drop when you move rooms</li>
+            <li>Your smart doorbell disconnects frequently</li>
+            <li>Streaming pauses during movies</li>
+            <li>You have a “tech closet” with a tangle of cables and no labels</li>
+          </ul>
+          <h3>How We Help</h3>
+          <p>Our team sets up high-speed, professionally-installed networks for homes and small businesses. Every install includes cable management, setup, and testing to make sure it works exactly how you need it to.</p>
+          <div class="tags">
+            <span class="tag">#wifiinstall</span><span class="tag">#networking</span><span class="tag">#meshwifi</span><span class="tag">#customav</span><span class="tag">#scvtech</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Outdoor TV and Speaker Systems -->
+      <article class="post" id="outdoor-av">
+        <figure><img class="thumb" src="assets/img/blog/outdoor-av.jpg" alt="Outdoor TV and landscape speakers on a patio"></figure>
+        <div class="body">
+          <div class="meta">October 2025 · SCV Tech</div>
+          <h2>Outdoor TVs & Speaker Systems: Bring Entertainment Outside</h2>
+          <p>An upgraded outdoor space isn’t complete without the right technology. Whether you’re entertaining guests, watching the big game by the firepit, or enjoying music on the patio, SCV Tech creates custom outdoor AV systems that perform in every season.</p>
+          <h3>Why Go Outdoor?</h3>
+          <p>Standard electronics aren’t built to handle sun, heat, rain, or dust. We install weather-rated TVs and speakers designed for full exposure — and make sure the installation looks just as good as it sounds.</p>
+          <h3>Our Outdoor Solutions</h3>
+          <ul>
+            <li><strong>All-Weather TVs</strong> — Bright, anti-glare screens designed for daytime viewing, rain or shine</li>
+            <li><strong>Landscape Audio</strong> — Speakers disguised as rocks, lights, or buried in planters</li>
+            <li><strong>Smart Control Options</strong> — Stream music or control TV volume from your phone or voice</li>
+            <li><strong>Concealed Cabling & Power</strong> — Clean, permanent installs without exposed wires</li>
+          </ul>
+          <h3>Ideal Spaces for Outdoor AV</h3>
+          <ul>
+            <li>Covered patios and pergolas</li>
+            <li>Poolside lounge areas</li>
+            <li>Outdoor kitchens and BBQ stations</li>
+            <li>Fire pits and backyard seating zones</li>
+          </ul>
+          <h3>What Sets SCV Tech Apart</h3>
+          <p>We don’t just mount a TV and plug in a speaker — we consult on sun exposure and sightlines, run weatherproof power and signal lines, tune sound for the layout and acoustics, and keep every cable hidden and secure.</p>
+          <div class="tags">
+            <span class="tag">#outdoorav</span><span class="tag">#landscapeaudio</span><span class="tag">#smartentertainment</span><span class="tag">#allweathertv</span><span class="tag">#scvtech</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- AV Troubleshooting -->
+      <article class="post" id="av-troubleshooting">
+        <figure><img class="thumb" src="assets/img/blog/troubleshooting2.jpg" alt="Technician organizing AV rack cables"></figure>
+        <div class="body">
+          <div class="meta">October 2025 · SCV Tech</div>
+          <h2>Common AV Troubleshooting Mistakes and How to Fix Them</h2>
+          <h3>1. Using the Wrong Cables</h3>
+          <p>Cheap or outdated HDMI and speaker cables cause poor audio/no signal, blurry video, or loss of ARC/eARC. We install high-speed, shielded cables rated for 4K, Dolby Atmos, and long runs.</p>
+          <h3>2. Skipping Calibration</h3>
+          <p>Out-of-box gear isn’t optimized. We calibrate TV picture (HDR/brightness/contrast), speaker levels and delay, and subwoofer placement/crossover.</p>
+          <h3>3. Overloading the Network</h3>
+          <p>Buffering or device drop-offs usually mean your network is maxed out. We assess capacity and upgrade routers, mesh, or hardwired lines.</p>
+          <h3>4. Messy, Inaccessible Wiring</h3>
+          <p>Unlabeled tangles make upgrades and fixes painful. We label, secure, and conceal wiring for clean serviceability.</p>
+          <h3>When to Call SCV Tech</h3>
+          <p>If your setup feels complicated, audio cuts out, devices disconnect, or you want to clean up years of DIY—call us. We’ll fix issues and future-proof the rest.</p>
+          <div class="tags">
+            <span class="tag">#avtroubleshooting</span><span class="tag">#techsupport</span><span class="tag">#customav</span><span class="tag">#audiovisualrepair</span><span class="tag">#scvtech</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Low Voltage Lighting -->
+      <article class="post" id="low-voltage-lighting">
+        <figure><img class="thumb" src="assets/img/blog/low-voltage.jpg" alt="Low voltage LED accent lighting in media room"></figure>
+        <div class="body">
+          <div class="meta">October 2025 · SCV Tech</div>
+          <h2>Why Low Voltage Lighting Is the Smartest Upgrade You Haven’t Done Yet</h2>
+          <p><em>Lighting Isn’t Just Functional—It’s Transformational.</em> Low voltage lighting can completely change how a home looks, feels, and functions. It’s efficient, safe, and adds that “wow” factor without high energy bills.</p>
+          <p>At SCV Tech, we design and install low voltage lighting that fits seamlessly into your AV and automation systems—indoors and outdoors.</p>
+          <h3>What Is Low Voltage Lighting?</h3>
+          <ul>
+            <li>Energy-efficient</li><li>Cool to the touch</li><li>Safe indoors/outdoors</li><li>Flexible for tight spaces and accents</li>
+          </ul>
+          <h3>Common Applications</h3>
+          <ul>
+            <li>Under-cabinet kitchen lighting</li>
+            <li>Accent lighting for home theaters</li>
+            <li>Stairway step lighting</li>
+            <li>Landscape lighting with smart timers</li>
+            <li>Wall-mounted LED strips synced to AV</li>
+          </ul>
+          <h3>Why Choose SCV Tech?</h3>
+          <p>We plan, conceal wiring, sync with smart controls (Alexa, Control4, etc.), and create zones that fit your routines.</p>
+          <p><strong>Ready for a quote?</strong> Contact SCV Tech or DM us on Instagram <a href="https://www.instagram.com/scv.tech" target="_blank" rel="noopener">@scv.tech</a></p>
+          <div class="tags">
+            <span class="tag">#lowvoltagelighting</span><span class="tag">#smartlighting</span><span class="tag">#avinstaller</span><span class="tag">#scvtech</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ring / Nest / Wyze Integration -->
+      <article class="post" id="ring-nest-wyze">
+        <figure><img class="thumb" src="assets/img/blog/ring-nest.png" alt="Ring doorbell, Nest thermostat, Wyze camera on a table"></figure>
+        <div class="body">
+          <div class="meta">October 2025 · SCV Tech</div>
+          <h2>How to Fully Integrate Ring, Nest & Wyze Into Your Smart Home Setup</h2>
+          <p>Your devices should work together. SCV Tech connects Ring, Nest, and Wyze into one streamlined ecosystem so your smart home actually feels smart.</p>
+          <h3>Why Integration Matters</h3>
+          <ul>
+            <li>Automation: Lights trigger when motion is detected</li>
+            <li>Centralized control: One app/panel</li>
+            <li>Smart alerts: Only the ones you care about</li>
+          </ul>
+          <h3>We Commonly Integrate</h3>
+          <p>Ring (doorbells, cameras), Nest (thermostats, smoke), Wyze (cameras, locks, sensors) into Alexa, Google, Apple HomeKit, Control4, or your AV panel.</p>
+          <h3>Client Favorites</h3>
+          <ul>
+            <li>Arm cameras and lock doors with one command</li>
+            <li>Stream camera feeds to TVs or wall tablets</li>
+            <li>Automate thermostat changes based on door activity</li>
+          </ul>
+          <p><strong>Serving Santa Clarita and surrounding areas</strong> · Instagram: <a href="https://www.instagram.com/scv.tech" target="_blank" rel="noopener">@scv.tech</a></p>
+          <div class="tags">
+            <span class="tag">#smarthomeintegration</span><span class="tag">#ringinstaller</span><span class="tag">#nestsetup</span><span class="tag">#wyzeinstaller</span><span class="tag">#scvtech</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Prewire vs Retrofit -->
+      <article class="post" id="prewire-retrofit">
+        <figure><img class="thumb" src="assets/img/blog/retrofit-image.png" alt="Structured wiring panel neatly organized"></figure>
+        <div class="body">
+          <div class="meta">October 2025 · SCV Tech</div>
+          <h2>Pre-Wire vs. Retrofit: Which One Do You Need for Your AV Project?</h2>
+          <p><em>Don’t start your AV project without reading this first.</em> New build or existing home? That’s the key question when choosing between pre-wire and retrofit.</p>
+          <h3>Pre-Wire: The Proactive Option</h3>
+          <ul>
+            <li>Happens before drywall is sealed</li>
+            <li>Full customization of speaker/AV/network lines</li>
+            <li>Clean installation and higher resale value</li>
+          </ul>
+          <h3>Retrofit: For Existing Homes</h3>
+          <ul>
+            <li>Wire without demolition</li>
+            <li>Discreet management with small access points</li>
+            <li>Great for camera upgrades or smart AV additions</li>
+          </ul>
+          <h3>Quick Guide</h3>
+          <table style="width:100%;border-collapse:collapse">
+            <tr><td style="border:1px solid var(--line);padding:.5rem">New Build</td><td style="border:1px solid var(--line);padding:.5rem">✅ Pre-Wire</td></tr>
+            <tr><td style="border:1px solid var(--line);padding:.5rem">Remodel</td><td style="border:1px solid var(--line);padding:.5rem">✅ Pre-Wire</td></tr>
+            <tr><td style="border:1px solid var(--line);padding:.5rem">Existing Home</td><td style="border:1px solid var(--line);padding:.5rem">✅ Retrofit</td></tr>
+          </table>
+          <p>We design smart wiring layouts that support 4K, control, and future expansion—labeled, organized, and cleanly installed.</p>
+          <p><strong>Text us at <a href="tel:+16612149212">661-214-9212</a> for a quote.</strong></p>
+          <div class="tags">
+            <span class="tag">#prewire</span><span class="tag">#retrofitav</span><span class="tag">#structuredwiring</span><span class="tag">#lowvoltageinstaller</span><span class="tag">#scvtech</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Control4 -->
+      <article class="post" id="control4-integration">
+        <figure><img class="thumb" src="assets/img/blog/control-4.jpg" alt="Control4 interface on wall panel controlling lights and audio"></figure>
+        <div class="body">
+          <div class="meta">October 2025 · SCV Tech</div>
+          <h2>Control4 in Real Life: How This Smart System Is Revolutionizing Homes and Small Businesses</h2>
+          <p><em>Welcome to the Control Center of the Future.</em> Control lighting, music, cameras, locks, climate, and more from one interface—at home or for your small business.</p>
+          <h3>Control4 at Home</h3>
+          <ul>
+            <li>Whole-home audio and lighting scenes</li>
+            <li>Integration with Ring, Nest, Wyze</li>
+            <li>Climate control, locks, and surveillance in one app</li>
+          </ul>
+          <h3>Control4 for Small Business</h3>
+          <ul>
+            <li>Automated lighting and climate (save on utilities)</li>
+            <li>Open/close routines for security and devices</li>
+            <li>Remote access to locks and cameras</li>
+          </ul>
+          <h3>Why SCV Tech Recommends Control4</h3>
+          <ul>
+            <li>Scalable from one room to full property</li>
+            <li>Custom scenes and pro-grade reliability</li>
+            <li>Controls via app, panel, voice assistant, or remote</li>
+          </ul>
+          <p><strong>Ready to take control?</strong> Call or text <a href="tel:+16612149212">661-214-9212</a> or message <a href="https://www.instagram.com/scv.tech" target="_blank" rel="noopener">@scv.tech</a>.</p>
+          <div class="tags">
+            <span class="tag">#control4integration</span><span class="tag">#smarthomeautomation</span><span class="tag">#smallbusinessautomation</span><span class="tag">#scvtech</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sonos -->
+      <article class="post" id="sonos-installation">
+        <figure><img class="thumb" src="assets/img/blog/sonos-1.jpg" alt="Sonos speakers and app controlling multi-room audio"></figure>
+        <div class="body">
+          <div class="meta">October 2025 · SCV Tech</div>
+          <h2>Why Sonos Is the Ultimate Smart Audio Upgrade for Your Home or Business</h2>
+          <p>Sonos is a complete audio ecosystem: wireless connectivity, multi-room syncing, great sound, and control from your phone, tablet, or wall panel.</p>
+          <h3>Key Sonos Features</h3>
+          <ul>
+            <li>Crystal-clear sound</li><li>Wi-Fi (not Bluetooth)</li><li>Voice control</li><li>Works with all major streaming services</li>
+          </ul>
+          <h3>At Home & For Business</h3>
+          <p>Surround sound with Arc/Sub/Ones, ceiling speakers with Sonos Amp, outdoor zones, and simple control for shops, salons, and offices.</p>
+          <h3>Sonos + Control4</h3>
+          <p>Make music part of your scenes; pause audio for calls or doorbells; integrate with lighting, locks, and sensors.</p>
+          <p><strong>Ready to hear the difference?</strong> Call/text <a href="tel:+16612149212">661-214-9212</a> or DM <a href="https://www.instagram.com/scv.tech" target="_blank" rel="noopener">@scv.tech</a>. Mention this blog for a free system checkup or quote.</p>
+          <div class="tags">
+            <span class="tag">#sonosintegration</span><span class="tag">#wirelessaudio</span><span class="tag">#smarthomeaudio</span><span class="tag">#control4integration</span><span class="tag">#scvtech</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand-text" style="margin-bottom:.5rem">SCV TECH</div>
+        <div class="subtle">Clean A/V, networking, security, and smart control—done right.</div>
+        <div class="subtle" style="margin-top:.5rem">Proudly serving Santa Clarita Valley and Greater Los Angeles.</div>
+      </div>
+      <div>
+        <h3 class="footer-title">Contact</h3>
+        <div class="subtle"><a href="tel:+16612149212">661-214-9212</a></div>
+        <div class="subtle"><a href="mailto:info@myscvtech.com">info@myscvtech.com</a></div>
+        <div class="subtle"><a href="https://www.instagram.com/scv.tech" target="_blank" rel="noopener">Instagram @scv.tech</a></div>
+        <div class="subtle"><a href="https://nextdoor.com/pages/scv-tech-castaic-ca/" target="_blank" rel="noopener">Nextdoor</a></div>
+      </div>
+      <div>
+        <h3 class="footer-title">Quick Links</h3>
+        <div class="subtle"><a href="index.html#services">Services</a></div>
+        <div class="subtle"><a href="index.html#gallery">Gallery</a></div>
+        <div class="subtle"><a href="index.html#why">Why SCV Tech</a></div>
+        <div class="subtle"><a href="index.html#contact">Request a Quote</a></div>
+      </div>
+    </div>
+    <div class="container" style="margin-top:1rem;border-top:1px solid rgba(255,255,255,.12);padding-top:1rem">
+      <div class="subtle">© <span id="year"></span> SCV Tech. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const hamb = document.querySelector('.hamburger');
+    const menu = document.getElementById('menu');
+    hamb?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
