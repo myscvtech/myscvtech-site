@@ -193,6 +193,63 @@
     .band{padding:1rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;color:#334155;background:#fff}
     .muted{color:var(--muted)}
     .spacer{height:.5rem}
+
+    /* Keep Services / Why / Gallery headings consistent */
+#services h2, #why h2, #gallery h2{
+  font-size:clamp(1.9rem,1.6vw + 1.4rem,2.6rem);
+}
+
+/* Reviews inside Why */
+#why .reviews-wrap{ margin-top:2rem; }
+#why .why-subtitle{
+  font-size:clamp(1.4rem,1vw + 1rem,1.8rem);
+  margin:.25rem 0 .5rem;
+}
+
+/* Reviews grid (responsive) */
+#why .reviews-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+  margin-top:1rem;
+}
+@media (max-width:1000px){ #why .reviews-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:640px){ #why .reviews-grid{ grid-template-columns:1fr; } }
+
+/* Review cards */
+#why .review{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:1.1rem 1.2rem;
+  box-shadow:var(--shadow-sm);
+  color:#334155;
+  line-height:1.6;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+#why .review:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 28px rgba(0,0,0,.10);
+}
+
+/* Stars + reviewer line */
+#why .review .stars{
+  color:#f59e0b;              /* amber stars */
+  letter-spacing:.08em;
+  font-size:1.1rem;
+  margin-bottom:.35rem;
+}
+#why .review .reviewer{
+  margin-top:.7rem;
+  font-weight:700;
+  color:var(--navy);
+  font-size:.95rem;
+}
+
+/* Scroll-in reveal animation */
+.reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+.reveal.revealed{ opacity:1 !important; transform:none !important; }
+
   </style>
 </head>
   <script src="//code.tidio.co/2hqvbkrus0bplpiymttoeuroyi8v86zz.js" async></script>
