@@ -715,6 +715,26 @@
 
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    <script>
+  // Reveal on scroll for .reveal elements
+  (function(){
+    const toReveal = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      toReveal.forEach(el=>el.classList.add('revealed'));
+      return;
+    }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('revealed');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.12});
+    toReveal.forEach(el=>io.observe(el));
+  })();
+
   </script>
 </body>
 </html>
