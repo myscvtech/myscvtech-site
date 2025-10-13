@@ -73,7 +73,17 @@
     @media (max-width:1000px){.posts{grid-template-columns:1fr}}
     .post{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
     .post figure{margin:0}
-    .post .thumb{aspect-ratio:16/9;object-fit:cover;width:100%;background:#e9eef9}
+    .post .thumb{
+  width:80%;           /* makes images narrower overall */
+  max-width:800px;     /* caps image width */
+  margin:0 auto;       /* centers it */
+  border-radius:12px;  /* optional — adds softer edges */
+  display:block;
+  object-fit:cover;
+  aspect-ratio:16/9;
+  background:#e9eef9;
+}
+
     .post .body{padding:1rem}
     .post .meta{font-size:.9rem;color:#6b7280;margin-bottom:.35rem}
     .post h2{margin:0 0 .35rem}
