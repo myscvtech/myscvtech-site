@@ -50,6 +50,34 @@
     .hamburger{display:none;background:none;border:0;padding:.4rem;border-radius:10px}
     .hamburger:focus-visible{outline:3px solid #a7b7ff}
 
+    /* Social Icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-icons img {
+  height: 22px;
+  width: 22px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.social-icons img:hover {
+  opacity: 0.7;
+}
+
+/* On mobile, move or hide icons if desired */
+@media (max-width: 900px) {
+  .social-icons {
+    position: absolute;
+    right: 4rem; /* keeps space for hamburger */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+
 /* MOBILE header: show logo, hide CTA */
 @media (max-width:900px){
   .brand{display:block} /* keep logo visible */
@@ -253,30 +281,43 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Header -->
-  <header>
-    <div class="container nav" role="navigation" aria-label="Primary">
-      <a class="brand" href="#top" aria-label="SCV Tech home">
-        <img src="assets/img/logo/SCV_Tech_Navy_Full_Logo_No_Background_.png" alt="SCV Tech logo">
+<header>
+  <div class="container nav" role="navigation" aria-label="Primary">
+    <a class="brand" href="#top" aria-label="SCV Tech home">
+      <img src="assets/img/logo/SCV_Tech_Navy_Full_Logo_No_Background_.png" alt="SCV Tech logo">
+    </a>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="https://www.instagram.com/scv.tech" target="_blank" aria-label="SCV Tech Instagram">
+        <img src="assets/img/icons/instagram.svg" alt="Instagram logo">
       </a>
-
-      <button class="hamburger" aria-expanded="false" aria-controls="menu" aria-label="Toggle Menu">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#182c64" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
-
-      <nav id="menu" class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#why">Why SCV Tech</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#faqs">FAQs</a>
-        <a href="blog">Blog</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="nav-cta">
-        <a class="btn" href=""tel:+16612149212"">661-214-9212</a>
-      </div>
+      <a href="https://nextdoor.com/pages/scv-tech-castaic-ca/" target="_blank" aria-label="SCV Tech Nextdoor">
+        <img src="assets/img/icons/nextdoor.svg" alt="Nextdoor logo">
+      </a>
     </div>
-  </header>
+
+    <button class="hamburger" aria-expanded="false" aria-controls="menu" aria-label="Toggle Menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke="#182c64" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <nav id="menu" class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why SCV Tech</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faqs">FAQs</a>
+      <a href="blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn" href="tel:+16612149212">661-214-9212</a>
+    </div>
+  </div>
+</header>
+
 
   <!-- Hero -->
   <section id="top" class="hero">
