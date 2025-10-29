@@ -38,44 +38,139 @@
     .btn:focus-visible{outline:3px solid #fff;box-shadow:0 0 0 4px #a7b7ff}
     .btn-link{background:transparent;border:none;color:var(--navy);font-weight:600}
 
-    /* Header */
-    .skip-link{position:absolute;left:-9999px;top:auto}
-    .skip-link:focus{left:1rem;top:1rem;background:#fff;padding:.5rem .75rem;border:2px solid var(--navy);border-radius:8px;z-index:9999}
-    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
-    .nav{position:relative;display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;gap:1rem}
-    .brand img{height:80px;width:auto} /* desktop logo size */
-    .nav-links{display:flex;align-items:center;gap:1.2rem}
-    .nav-links a{color:#111827;font-weight:500}
-    .nav-cta{display:flex;align-items:center;gap:.8rem}
-    .hamburger{display:none;background:none;border:0;padding:.4rem;border-radius:10px}
-    .hamburger:focus-visible{outline:3px solid #a7b7ff}
+   /* Header */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #fff;
+  padding: .5rem .75rem;
+  border: 2px solid var(--navy);
+  border-radius: 8px;
+  z-index: 9999;
+}
 
-    /* Social Icons */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+/* main header row */
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .55rem 0;
+  gap: 1rem;
+}
+
+/* left cluster: logo + socials act as one flex group */
+.left-cluster {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between logo and socials */
+  min-width: 0;
+}
+
+.brand img {
+  height: 80px;
+  width: auto;
+}
+
+/* social icons */
 .social-icons {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.social-icons img {
-  height: 22px;
-  width: 22px;
-  transition: opacity 0.2s ease-in-out;
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  color: #182c64;              /* navy-ish base */
+  transition: opacity .2s ease-in-out;
 }
 
-.social-icons img:hover {
+.social-link:hover {
   opacity: 0.7;
 }
 
-/* On mobile, move or hide icons if desired */
-@media (max-width: 900px) {
-  .social-icons {
-    position: absolute;
-    right: 4rem; /* keeps space for hamburger */
-    top: 50%;
-    transform: translateY(-50%);
+.social-link .icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* center nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.nav-links a {
+  color: #111827;
+  font-weight: 500;
+}
+
+/* right side CTA + hamburger */
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: 0;
+  padding: .4rem;
+  border-radius: 10px;
+}
+.hamburger:focus-visible {
+  outline: 3px solid #a7b7ff;
+}
+
+/* MOBILE */
+@media (max-width:900px){
+  .nav {
+    padding: .55rem 0;
+  }
+
+  /* show burger, hide CTA */
+  .hamburger {
+    display: inline-flex;
+  }
+  .nav-cta .btn {
+    display: none;
+  }
+
+  /* mobile menu panel */
+  .nav-links {
+    position: fixed;
+    inset: 85px 0 auto 0;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    padding: 1rem 1.25rem;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .nav-links.open {
+    display: flex;
   }
 }
+
 
 
 /* MOBILE header: show logo, hide CTA */
@@ -280,38 +375,42 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header -->
+<!-- Header -->
 <header>
   <div class="container nav" role="navigation" aria-label="Primary">
-    <a class="brand" href="#top" aria-label="SCV Tech home">
-      <img src="assets/img/logo/SCV_Tech_Navy_Full_Logo_No_Background_.png" alt="SCV Tech logo">
-    </a>
 
+    <!-- LEFT: Logo + Social -->
+    <div class="left-cluster">
+      <a class="brand" href="#top" aria-label="SCV Tech home">
+        <img src="assets/img/logo/SCV_Tech_Navy_Full_Logo_No_Background_.png" alt="SCV Tech logo">
+      </a>
 
-    <!-- Social Icons -->
-<div class="social-icons" aria-label="Social links">
-  <a class="social-link ig" href="https://www.instagram.com/scv.tech" target="_blank" rel="noopener" aria-label="SCV Tech on Instagram">
-    <!-- Instagram glyph -->
-    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.75-2.25a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0Z"/>
-    </svg>
-  </a>
+      <div class="social-icons" aria-label="Social links">
+        <a class="social-link ig" href="https://www.instagram.com/scv.tech" target="_blank" rel="noopener" aria-label="SCV Tech on Instagram">
+          <!-- Instagram glyph -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.75-2.25a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0Z"/>
+          </svg>
+        </a>
 
-  <a class="social-link nd" href="https://nextdoor.com/pages/scv-tech-castaic-ca/" target="_blank" rel="noopener" aria-label="SCV Tech on Nextdoor">
-    <!-- Nextdoor 'n' mark (simple icon) -->
-    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path fill="currentColor" d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm4.5 6.2v7h2.2v-4.5c0-1.15.6-1.85 1.65-1.85 1 0 1.55.64 1.55 1.84v4.51h2.2V11c0-2.43-1.33-3.84-3.24-3.84-1.23 0-2.15.52-2.7 1.38V9H8.5Z"/>
-    </svg>
-  </a>
-</div>
+        <a class="social-link nd" href="https://nextdoor.com/pages/scv-tech-castaic-ca/" target="_blank" rel="noopener" aria-label="SCV Tech on Nextdoor">
+          <!-- Nextdoor icon -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm4.5 6.2v7h2.2v-4.5c0-1.15.6-1.85 1.65-1.85 1 0 1.55.64 1.55 1.84v4.51h2.2V11c0-2.43-1.33-3.84-3.24-3.84-1.23 0-2.15.52-2.7 1.38V9H8.5Z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <!-- /LEFT -->
 
-
+    <!-- HAMBURGER -->
     <button class="hamburger" aria-expanded="false" aria-controls="menu" aria-label="Toggle Menu">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M3 6h18M3 12h18M3 18h18" stroke="#182c64" stroke-width="2" stroke-linecap="round"/>
       </svg>
     </button>
 
+    <!-- CENTER NAV LINKS -->
     <nav id="menu" class="nav-links">
       <a href="#services">Services</a>
       <a href="#why">Why SCV Tech</a>
@@ -321,11 +420,14 @@
       <a href="#contact">Contact</a>
     </nav>
 
+    <!-- RIGHT CTA -->
     <div class="nav-cta">
       <a class="btn" href="tel:+16612149212">661-214-9212</a>
     </div>
+
   </div>
 </header>
+
 
 
   <!-- Hero -->
