@@ -150,9 +150,26 @@ header {
   .hamburger {
     display: inline-flex;
   }
-  .nav-cta .btn {
-    display: none;
+  .nav-cta .btn{
+    display:inline-flex;          /* show phone on mobile */
+    padding:.65rem 1rem;          /* slightly smaller */
+    font-size:.95rem;
   }
+
+  /* keep right side items tight and aligned */
+.nav-cta{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+}
+
+/* make sure mobile header doesn't wrap awkwardly */
+@media (max-width:900px){
+  .nav{ gap:.75rem; }
+  .brand img{ height:64px; }      /* optional: slightly smaller logo on mobile */
+  .social-link .icon{ width:22px; height:22px; } /* optional */
+}
+
 
   /* mobile menu panel */
   .nav-links {
@@ -785,13 +802,46 @@ header {
   </footer>
 
   <script>
-    // Mobile nav
-    const hamb = document.querySelector('.hamburger');
-    const menu = document.getElementById('menu');
-    hamb?.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
-      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+  // Mobile nav (open/close + close on link click + close on scroll/outside)
+const hamb = document.querySelector('.hamburger');
+const menu = document.getElementById('menu');
+
+function closeMenu(){
+  menu.classList.remove('open');
+  hamb?.setAttribute('aria-expanded', 'false');
+}
+function toggleMenu(){
+  const open = menu.classList.toggle('open');
+  hamb?.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
+hamb?.addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleMenu();
+});
+
+// Close after selecting a menu option
+menu?.querySelectorAll('a[href^="#"], a[href^="/"], a[href^="blog"], a[href^="."]').forEach(link => {
+  link.addEventListener('click', () => closeMenu());
+});
+
+// Close if user taps outside
+document.addEventListener('click', (e) => {
+  if (!menu.classList.contains('open')) return;
+  const clickedInsideMenu = e.target.closest('#menu');
+  const clickedHamburger = e.target.closest('.hamburger');
+  if (!clickedInsideMenu && !clickedHamburger) closeMenu();
+});
+
+// Close on scroll (so it won't cover the screen)
+let lastScrollY = window.scrollY;
+window.addEventListener('scroll', () => {
+  if (!menu.classList.contains('open')) return;
+  const moved = Math.abs(window.scrollY - lastScrollY);
+  if (moved > 8) closeMenu(); // small threshold so tiny scrolls don't instantly close
+  lastScrollY = window.scrollY;
+}, { passive: true });
+
 
     // Accordion
     document.querySelectorAll('.acc-btn').forEach(btn=>{
