@@ -355,6 +355,22 @@ header {
 @media (max-width:1000px){ #why .reviews-grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:640px){ #why .reviews-grid{ grid-template-columns:1fr; } }
 
+/* Desktop: keep nav links centered even though CTA/hamburger are after it in HTML */
+@media (min-width:901px){
+  .nav-links{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+  }
+}
+
+/* Mobile: keep CTA and hamburger on the right side */
+@media (max-width:900px){
+  .nav-cta{ order: 2; }
+  .hamburger{ order: 3; }
+}
+
+    
 /* Review cards */
 #why .review{
   background:#fff;
@@ -419,27 +435,28 @@ header {
     </div>
     <!-- /LEFT -->
 
-    <!-- HAMBURGER -->
-    <button class="hamburger" aria-expanded="false" aria-controls="menu" aria-label="Toggle Menu">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 6h18M3 12h18M3 18h18" stroke="#182c64" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
-
     <!-- CENTER NAV LINKS -->
-    <nav id="menu" class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#why">Why SCV Tech</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#faqs">FAQs</a>
-      <a href="blog">Blog</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<nav id="menu" class="nav-links">
+  <a href="#services">Services</a>
+  <a href="#why">Why SCV Tech</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#faqs">FAQs</a>
+  <a href="blog">Blog</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-    <!-- RIGHT CTA -->
-    <div class="nav-cta">
-      <a class="btn" href="tel:+16612149212">661-214-9212</a>
-    </div>
+<!-- RIGHT CTA (shows on desktop + mobile) -->
+<div class="nav-cta">
+  <a class="btn" href="tel:+16612149212">661-214-9212</a>
+</div>
+
+<!-- HAMBURGER (last, so it sits far right) -->
+<button class="hamburger" aria-expanded="false" aria-controls="menu" aria-label="Toggle Menu">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M3 6h18M3 12h18M3 18h18" stroke="#182c64" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</button>
+
 
   </div>
 </header>
